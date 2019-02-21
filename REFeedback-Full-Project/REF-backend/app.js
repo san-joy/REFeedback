@@ -9,7 +9,8 @@ const feedbackRoutes = require("./routes/feedback");
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/REFeedback', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
+// Define database connection here 
+mongoose.connect('mongodb://localhost/REFeedback', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
   .then(() => {
     console.log("Connected to database!");
   })
