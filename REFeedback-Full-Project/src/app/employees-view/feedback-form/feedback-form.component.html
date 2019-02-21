@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="main-container">
+
+<mat-card>
+  <mat-card-title>Feedback form</mat-card-title>
+  <mat-divider></mat-divider><br>
+
+<form (submit)="onSubmit()" [formGroup] = "feedbackForm">
+  <mat-form-field>
+    <textarea matInput formControlName="feedback" type="password"></textarea>
+    <mat-placeholder class="placeholder">Please type your feedback</mat-placeholder>
+    <mat-error *ngIf="feedbackForm.get('feedback').invalid">Feedback is required.</mat-error>
+  </mat-form-field><br><br>
+  
+  <button class="button" [disabled]="feedbackForm.invalid" mat-raised-button type="submit">Send feedback</button><br>
+</form>
+</mat-card>
+</div>
+<app-footer></app-footer>

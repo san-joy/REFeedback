@@ -1,0 +1,25 @@
+<div class="loginPage">
+  <div><img src="../../assets/re-feedback-logo.png" alt="logo"></div>
+  <mat-card>
+    <mat-card-title>Welcome back!</mat-card-title>
+    <mat-divider></mat-divider><br>
+
+  <form (submit)="onLogin()" [formGroup] = "loginForm">
+    <mat-form-field>
+      <input matInput formControlName="email" type="email" required>
+      <mat-placeholder class="placeholder">E-Mail</mat-placeholder>
+      <mat-error *ngIf="loginForm.get('email').invalid">A valid email is required.</mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <input matInput formControlName="password" type="password" required>
+      <mat-placeholder class="placeholder">Password</mat-placeholder>
+      <mat-error *ngIf="loginForm.get('password').invalid">Password is required.</mat-error>
+    </mat-form-field><br><br>
+    
+    <button class="button" [disabled]="loginForm.invalid" mat-raised-button type="submit">Sign in to my account</button><br>
+  </form>
+  </mat-card>
+  <p class="copyrightText">Copyright © 2019 REFeedback</p>
+</div>
+

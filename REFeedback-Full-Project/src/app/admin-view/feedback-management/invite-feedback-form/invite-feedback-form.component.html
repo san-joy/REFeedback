@@ -1,0 +1,17 @@
+<app-header></app-header>
+  <div class="main-container">
+    <mat-card>
+        <mat-card-title>Invite employee(s) to give feedback to {{ employeeName }}</mat-card-title>
+        <mat-divider></mat-divider><br>
+        <form (submit)="onSubmit()" [formGroup] = "form">
+          <div formArrayName="feedbackProvider" *ngFor="let employee of employees">
+            <div *ngIf="employee.fullname != employeeName">
+              <mat-checkbox (change)="checkbox($event, empName)" #empName [value] = "employee">{{ employee.fullname }}</mat-checkbox>
+            <br><br>
+            </div>
+          </div>
+          <button class="button" [disabled]="form.invalid" mat-raised-button type="submit">Send Invite</button><br>
+        </form>
+    </mat-card>
+  </div>
+<app-footer></app-footer>

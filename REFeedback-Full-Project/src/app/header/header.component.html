@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="logo">
+      <a routerLink="/dashboard"><img src="../../assets/re-feedback-logo.png"></a>
+    </div>
+    <div class="logout-notify">
+        <a matTooltip="Logout" matTooltipClass="tooltip-color" [matTooltipPosition]="position.value" (click)="onLogout()"> 
+            <mat-icon>power_settings_new</mat-icon>
+        </a>
+    </div>
+</div>
+<div class="navigation">
+  <ul>
+    <li>
+      <a *ngIf="!adminPermission" routerLink="/feedbackAssignment" class="nav-link">
+        <i class="material-icons">chat</i><p>Feedback</p>
+      </a>
+    </li>
+    <li>
+      <a  *ngIf="adminPermission" routerLink="/employeeManagement" class="nav-link">
+        <i class="material-icons">group</i><p>Employees</p>
+      </a>
+    </li>
+    <li *ngIf="adminPermission">
+      <a routerLink="/feedbackManagement" class="nav-link">
+        <i class="material-icons">chat</i><p>Feedback</p>
+      </a>
+    </li>
+  </ul>
+</div>

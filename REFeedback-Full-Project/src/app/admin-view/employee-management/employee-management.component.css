@@ -1,0 +1,17 @@
+table{
+    width: 100%;
+}
+
+mat-card-title{
+    margin-right: 20px;
+}
+
+.add-button{
+    background: #e95f16;
+    color: #ffffff;
+}
+
+.edit{
+    color: #3bbcd2;
+}
+

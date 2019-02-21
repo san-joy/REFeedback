@@ -1,0 +1,70 @@
+.header{
+    width: 96%;
+    padding: 1% 2%;
+    float: left;
+}
+
+.logo{
+    width: 50%;
+    float: left;
+}
+
+.logout-notify{
+    width: 50%;
+    float: right;
+}
+
+.logout-notify a{
+    float: right;
+    padding: 40px 10px 0; 
+    color: #555555;
+}
+
+.tooltip-color{
+    background: #e95f16;
+}
+
+.navigation{
+    width: 100%;
+    background: #3bbcd2;
+    float: left;
+    text-align: center;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid #3fc5dd;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+ul li a:hover{
+    background-color: #309caf;
+}
+
+ul li a .material-icons{
+    float: left;
+}
+
+ul li a p{
+    display: inline;
+    position: relative;
+    left: 5px;
+    bottom: -5px;
+}

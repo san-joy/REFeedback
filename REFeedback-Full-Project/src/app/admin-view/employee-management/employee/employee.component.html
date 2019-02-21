@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="main-container">
+
+  <mat-card>
+    <mat-card-title>{{ mode }}</mat-card-title>
+    <mat-divider></mat-divider><br>
+  <form (submit)="onSubmit()" [formGroup] = "form">
+
+    <mat-form-field>
+      <input matInput formControlName="fullname" type="text">
+      <mat-placeholder class="placeholder">Fullname</mat-placeholder>
+      <mat-error *ngIf="form.get('fullname').invalid">Fullname is required.</mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <input matInput formControlName="email" type="email">
+      <mat-placeholder class="placeholder">E-Mail</mat-placeholder>
+      <mat-error *ngIf="form.get('email').invalid">A valid email is required.</mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <input matInput formControlName="password" type="password">
+      <mat-placeholder class="placeholder">Password</mat-placeholder>
+      <mat-error *ngIf="form.get('password').invalid">Password is required.</mat-error>
+    </mat-form-field><br>
+    
+    <mat-form-field>
+        <input matInput formControlName="position" type="text" required>
+        <mat-placeholder class="placeholder">Position</mat-placeholder>
+        <mat-error *ngIf="form.get('position').invalid">position is required.</mat-error>
+    </mat-form-field><br><br>
+    
+    <button class="button" [disabled]="form.invalid" mat-raised-button type="submit">Save</button><br>
+  </form>
+  </mat-card>
+
+</div>
+<app-footer></app-footer>

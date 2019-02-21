@@ -1,0 +1,96 @@
+*{
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+}
+
+.container{
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* change autofill background color in chrome browser */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* Form error css */
+.mat-form-field-ripple {
+    background-color: #3bbcd2 !important;
+}
+
+.mat-focused .placeholder {
+    color: #3bbcd2;
+}
+
+.button:valid{
+    width: 100%;
+    font-size: 16px;
+    background-color: #3bbcd2 !important;
+    color: #ffffff !important;
+}
+
+.button:disabled{
+    width: 100%;
+    background-color: #319caf !important;
+}
+
+mat-card-title{
+    font-size: 18px;
+    color: gray;
+    text-align: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+/* Notification Bar */
+snack-bar-container.success {
+    background-color: #3bbcd2;
+    color: #ffffff;
+    
+}
+
+snack-bar-container.warning{
+    background-color: #e95f16;
+    color: #ffffff;
+}
+
+snack-bar-container.notification simple-snack-bar{
+    font-weight: bold;
+}
+
+.hide{
+    display: none;
+}
+
+mat-footer-row mat-footer-cell{
+    justify-content: center;
+    font-style: italic;
+}
+
+.main-container{
+    width: 96%;
+    padding: 2%;
+    float: left;
+}
+
+.delete{
+    color: red;
+}
+
+a{
+    cursor: pointer;
+}
+

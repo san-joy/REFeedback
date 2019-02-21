@@ -1,0 +1,23 @@
+.loginPage{
+	height:auto;
+	min-height:100vh;
+	background-image:url(../../assets/refeedback-bg.jpg);
+	background-size:cover;
+    background-position:center;
+    overflow: hidden;
+}
+
+.loginPage img{
+    display: block;
+    margin: 100px auto 30px auto;
+}
+
+mat-card {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.copyrightText{
+    text-align: center;
+    color:#555555;
+}

@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="main-container">
+<mat-card>
+  <mat-card-title>Welcome {{ feedbackProviderName }}</mat-card-title>
+  <mat-divider></mat-divider><br>
+  <div *ngIf="hideMessage">
+  <div *ngFor="let feedbackReceiver of feedbackReceivers" class="feedbackSection">
+    You are invited to give feedback to {{ feedbackReceiver[0].fullname }}
+    <a class="button" mat-button [routerLink]="['/feedbackForm', feedbackReceiver[1]]">Feedback</a><br><br>
+    <mat-divider></mat-divider><br>
+  </div>
+  </div>
+  <div class="feedbackSection" *ngIf="!hideMessage">
+    No feedback to complete.
+  </div>
+</mat-card>
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="main-container">
+<mat-card>
+    <mat-toolbar>
+        <mat-card-title>Feedback management</mat-card-title>
+    </mat-toolbar>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="listData">
+      <ng-container matColumnDef="feedback-receiver">
+        <mat-header-cell *matHeaderCellDef>Feedback Receiver</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.fullname}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="feedback-provider">
+        <mat-header-cell *matHeaderCellDef>Feedback Provider</mat-header-cell>
+        <mat-cell *matCellDef="let element">No Provider</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="feedback">
+        <mat-header-cell *matHeaderCellDef>Feedback</mat-header-cell>
+        <mat-cell *matCellDef="let element">No Feedback </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <a class="inviteButton" mat-button [routerLink]="['/feedback', row.id]">Invite <mat-icon>assignment</mat-icon></a>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading feedback information...
+        </mat-footer-cell>
+      </ng-container>
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          No data found.
+        </mat-footer-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData != null}"></mat-footer-row>
+      <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData != null && listData.data.length == 0)}"></mat-footer-row>
+    </table>
+    <mat-paginator [length]="totalEmployees" [pageSize]= "employeesPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"> </mat-paginator>
+  </div>
+</mat-card>
+
+</div>
+<app-footer></app-footer>
